@@ -1,0 +1,4 @@
+When you hot-reload, build() is called again because the Flutter framework triggers a rebuild of the widget tree to reflect any changes, whereas initState() only runs once when the State object is first created. Even if the underlying data changes, the screen does not update because setState() is required to notify the Flutter framework that the internal state has changed, which signals the framework to call the build() method and redraw the UI with the new data.
+
+Section 4
+_refresh() must call setState() because, although the database holds the new information, the Flutter widget does not automatically know that the database contents have changed; calling setState() forces the widget to rebuild using the updated list of students retrieved from the database, ensuring the UI stays synchronized with the data.
